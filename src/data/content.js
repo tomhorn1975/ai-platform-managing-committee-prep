@@ -240,3 +240,374 @@ export const scenarios = {
     },
   ],
 }
+
+export const learningContent = {
+  'ai-portal': [
+    {
+      title: '🏛️ What Is the AI Portal?',
+      body: 'Think of it as the bank\'s internal "app store" for AI. Instead of every team going out and finding their own AI tools — with no consistency, no approval process, and no oversight — the AI Portal is one central place where teams can discover, request access to, and use approved AI capabilities safely.',
+      bullets: [
+        'A single hub where all approved AI tools and models live',
+        'Teams browse a catalog, request access, and get started quickly',
+        'Every use is logged and governed — nothing slips through untracked',
+        'Built by our AI Platform team, used by the entire bank',
+      ],
+    },
+    {
+      title: '🔧 What We\'re Building',
+      body: 'We are rolling out the AI Portal in three phases. Each phase adds more capability and more business users.',
+      bullets: [
+        'Phase 1 — Foundation: Build the platform, set up the model catalog, onboard the first AI use cases. This is our current focus.',
+        'Phase 2 — Self-Service: Business lines can browse and access approved AI tools on their own, with automated approval workflows.',
+        'Phase 3 — Marketplace: Open the catalog to vetted third-party AI capabilities and allow teams to share their own models internally.',
+      ],
+    },
+    {
+      title: '❓ Why Does the Bank Need This?',
+      body: 'Without a portal, AI adoption becomes uncontrolled and risky. Here is what happens when there is no central platform:',
+      bullets: [
+        'Teams buy different AI tools independently — duplicating cost and effort',
+        'No consistent approval or validation — compliance gaps appear',
+        'No audit trail — regulators cannot see what AI is being used or how',
+        'Duplicate work — five teams building the same thing in isolation',
+        'With the portal: one approval process, one audit trail, one place to find everything',
+      ],
+    },
+    {
+      title: '🛡️ How Governance Works',
+      body: 'Governance is not a barrier — it is built into the workflow so teams can move fast and stay compliant at the same time.',
+      bullets: [
+        'Every AI model goes through validation before it enters the catalog',
+        'Each model has a risk rating: low, medium, or high',
+        'Access requests require a business justification and are approved by the right people',
+        'Everything is logged: who accessed what, when, and why',
+        'The portal connects directly to our Model Risk Management process',
+      ],
+    },
+    {
+      title: '📊 How We Measure Success',
+      body: 'Management will want to see concrete numbers. Here is what we track:',
+      bullets: [
+        'Number of approved AI models in the catalog (growing over time)',
+        'Time-to-access: how quickly a team can go from request to using an AI tool',
+        'Adoption rate: how many business lines are using the portal',
+        'Compliance incidents prevented: AI use that would have bypassed governance',
+        'Cost savings from shared infrastructure vs. teams buying independently',
+      ],
+    },
+    {
+      title: '💡 Key Talking Points for Management',
+      body: 'When presenting the AI Portal, anchor every point in business value and risk control:',
+      bullets: [
+        '"The portal is how we accelerate AI adoption without losing control"',
+        '"Every AI use case in the bank will go through this platform — nothing operates in the shadows"',
+        '"We are building this once so every team benefits — not reinventing the wheel 20 times"',
+        '"The portal is also how we satisfy regulators: complete audit trail, validated models, documented approvals"',
+      ],
+    },
+  ],
+
+  'gen-ai': [
+    {
+      title: '✨ What Is Generative AI?',
+      body: 'Generative AI is a type of AI that creates new content — text, summaries, answers, code — rather than just making predictions. The most well-known examples are ChatGPT and Claude. In banking, we use these tools to help employees work faster and smarter.',
+      bullets: [
+        'Traditional AI: looks at data and predicts an outcome (e.g., "this transaction looks fraudulent")',
+        'Generative AI: takes a question or prompt and writes a response (e.g., "summarize this loan document")',
+        'Powered by Large Language Models (LLMs) — AI trained on vast amounts of text',
+        'Responds to natural language — users type in plain English, not code',
+      ],
+    },
+    {
+      title: '🏦 What We\'re Using It For',
+      body: 'Our Gen AI initiatives focus on high-value, lower-risk use cases where the benefit is clear and the output is reviewed by a human before it matters.',
+      bullets: [
+        'Relationship Managers: draft client emails, summarize meeting notes, prep for client calls — saves 5-10 hours per week',
+        'Developers: AI-assisted code writing and review — speeds up software delivery',
+        'Analysts: summarize long regulatory documents, earnings reports, and research',
+        'Operations: draft responses to internal requests, generate structured reports from unstructured data',
+      ],
+    },
+    {
+      title: '⚠️ The Main Risk: Hallucinations',
+      body: 'The biggest risk with Gen AI is that the model can confidently state something that is completely wrong. This is called a "hallucination." In banking, a wrong answer in a client document or compliance filing can be serious.',
+      bullets: [
+        'Hallucinations happen because the model generates plausible-sounding text — it does not "know" facts the way a human does',
+        'Example: a model might cite a regulation that does not exist, or state an incorrect financial figure',
+        'Our mitigation: all Gen AI outputs are reviewed by a human before being used',
+        'We also use RAG (see below) to anchor answers in real documents',
+      ],
+    },
+    {
+      title: '🔗 How We Reduce Risk: RAG',
+      body: 'RAG stands for Retrieval Augmented Generation. Instead of letting the AI answer from memory, we first pull the relevant real document, then have the AI summarize or answer based on that document.',
+      bullets: [
+        'Think of it like giving the AI the textbook before the exam, instead of asking it to remember everything',
+        'The AI\'s answer is grounded in an actual source document you can verify',
+        'Dramatically reduces hallucinations in document-heavy use cases',
+        'We use RAG for regulatory analysis, policy Q&A, and loan document review',
+      ],
+    },
+    {
+      title: '📋 How We Govern Gen AI',
+      body: 'Governance is non-negotiable in a regulated bank. Our Gen AI governance framework covers four areas:',
+      bullets: [
+        'Approved models only: every LLM must pass through the AI Portal before anyone can use it',
+        'Data privacy: customer PII (personal data) is never sent to a vendor model without explicit controls — we use private deployments or data masking',
+        'Audit trail: every Gen AI interaction in a business context is logged',
+        'Human review: Gen AI outputs are drafts — humans approve before anything goes to a client or regulator',
+      ],
+    },
+    {
+      title: '⚖️ The Regulation: SR 11-7',
+      body: 'SR 11-7 is the Federal Reserve\'s guidance on Model Risk Management. It applies to all AI models at banks — including Gen AI. Management needs to know we are compliant.',
+      bullets: [
+        'Requires every model to be validated before deployment',
+        'Requires ongoing monitoring after deployment',
+        'Requires documentation of what the model does, its limitations, and its risks',
+        'Our AI Portal workflow automatically satisfies these requirements for every use case',
+        '"We do not deploy any Gen AI without completing our SR 11-7 validation process"',
+      ],
+    },
+    {
+      title: '💡 Key Talking Points for Management',
+      bullets: [
+        '"Gen AI helps our employees do more in less time — it is a productivity tool, not a replacement"',
+        '"We only deploy use cases where the risk is understood and a human is in the loop"',
+        '"Our governance framework ensures every Gen AI use is logged, approved, and compliant with SR 11-7"',
+        '"We are not experimenting blindly — each use case has a defined business case, risk rating, and success metric"',
+      ],
+    },
+  ],
+
+  'machine-learning': [
+    {
+      title: '🧠 What Is Machine Learning?',
+      body: 'Machine Learning (ML) is AI that learns from historical data to make predictions. Unlike traditional software where humans write every rule, ML models discover patterns on their own by studying thousands or millions of past examples.',
+      bullets: [
+        'You show the model thousands of past examples: "here are 10,000 transactions — 200 were fraud"',
+        'The model finds the patterns that separate fraud from normal activity',
+        'When a new transaction comes in, the model scores it: "70% chance this is fraud"',
+        'The bank already uses ML today — fraud detection, credit scoring, and AML are mature ML applications',
+      ],
+    },
+    {
+      title: '🏦 Where We Use ML at the Bank',
+      body: 'ML has the broadest footprint of any AI technology in banking. These are our highest-priority use cases:',
+      bullets: [
+        'Fraud detection: flag suspicious transactions in real time before they complete',
+        'Credit risk scoring: predict the likelihood a borrower will repay a loan',
+        'AML (Anti-Money Laundering): identify patterns in transactions that suggest financial crime',
+        'Customer churn: predict which customers are likely to leave and enable proactive outreach',
+        'Cross-sell recommendations: identify the right product for the right customer at the right time',
+      ],
+    },
+    {
+      title: '🔄 How a Model Gets Built and Deployed',
+      body: 'Building an ML model is a structured process with multiple checkpoints — it is not someone just "training AI on a laptop." Here is the lifecycle:',
+      bullets: [
+        '1. Data collection: gather clean, relevant historical data',
+        '2. Feature engineering: transform raw data into the inputs the model will learn from',
+        '3. Model training: the algorithm finds patterns in the data',
+        '4. Validation: test the model on data it has never seen — does it perform as expected?',
+        '5. Champion/challenger: run the new model alongside the existing model to compare performance',
+        '6. Deployment: the model goes into production and starts making real decisions',
+        '7. Monitoring: track performance daily — does the model still work as expected?',
+        '8. Retraining: when performance degrades, refresh the model with new data',
+      ],
+    },
+    {
+      title: '⚠️ The Main Risk: Model Drift',
+      body: 'A model that worked perfectly last year might not work as well today. This is called model drift — the real world changes, but the model was trained on old data.',
+      bullets: [
+        'Example: a fraud model trained before a major shift in online shopping behavior might miss new fraud patterns',
+        'Example: a credit model trained during low interest rates might not predict defaults accurately in a high-rate environment',
+        'Our response: continuous monitoring dashboards that alert us when a model\'s performance degrades',
+        'We always have a "champion/challenger" setup — if the live model falters, we have a backup ready',
+      ],
+    },
+    {
+      title: '🏗️ What the AI Platform Team Provides',
+      body: 'Instead of every data science team building everything from scratch, our platform gives them shared, reusable infrastructure:',
+      bullets: [
+        'Feature Store: a library of pre-built data inputs teams can reuse — build once, use everywhere',
+        'Model Registry: a catalog of all models in development and production, with their status and performance metrics',
+        'Automated pipelines: standardized workflows from training through deployment — faster and more consistent',
+        'Monitoring dashboards: real-time performance tracking with automated alerts',
+        'Governance gates: SR 11-7 validation checkpoints built into every deployment path',
+      ],
+    },
+    {
+      title: '⚖️ Regulations We Must Follow',
+      body: 'ML in banking is heavily regulated. Here is what management needs to know we are on top of:',
+      bullets: [
+        'SR 11-7: model validation and risk management — required for all models',
+        'ECOA (Equal Credit Opportunity Act): credit models must not discriminate based on race, gender, age, or other protected characteristics',
+        'FCRA (Fair Credit Reporting Act): credit decisions must be explainable — we must be able to tell a customer why they were declined',
+        'BSA/AML: our transaction monitoring models must be demonstrably effective to regulators',
+        'Our platform embeds these requirements — you cannot deploy a model without satisfying them',
+      ],
+    },
+    {
+      title: '💡 Key Talking Points for Management',
+      bullets: [
+        '"ML is not new to the bank — we are maturing how we build, govern, and scale it"',
+        '"Our platform means data scientists spend time on models, not plumbing — faster time to value"',
+        '"Every model deployed through our platform is SR 11-7 compliant and continuously monitored"',
+        '"Champion/challenger testing means we never replace a working model without proof the new one is better"',
+      ],
+    },
+  ],
+
+  'doc-intelligence': [
+    {
+      title: '📄 What Is Document Intelligence?',
+      body: 'Document Intelligence uses AI to automatically read, understand, and extract information from documents — the same work a human analyst does manually, but in seconds instead of hours.',
+      bullets: [
+        'Instead of a person opening a PDF and typing data into a system, AI reads the document and extracts the data automatically',
+        'Works on PDFs, scanned images, photos of documents, and structured forms',
+        'Can handle complex layouts: tables, multi-column forms, handwritten fields',
+        'The extracted data feeds directly into bank systems — no manual data entry',
+      ],
+    },
+    {
+      title: '🔬 The Technologies Inside It',
+      body: 'Document Intelligence combines several AI technologies working together:',
+      bullets: [
+        'OCR (Optical Character Recognition): converts an image of text into actual readable text — the foundational layer',
+        'NLP (Natural Language Processing): understands what the text means, not just what it says',
+        'Computer Vision: understands the visual layout of a page — where tables are, where signatures appear',
+        'Extraction Models: trained on specific document types to know exactly where to find each data field',
+        'Together these move from "pixels on a page" to "structured, usable data in our systems"',
+      ],
+    },
+    {
+      title: '🏦 What We\'re Targeting First',
+      body: 'Our Phase 1 focus is loan origination — the process of approving mortgages and personal loans. This is where manual document handling is most painful and the ROI is clearest.',
+      bullets: [
+        'Target documents: pay stubs, W-2s, bank statements, tax returns, government IDs',
+        'Current state: loan processors manually open each document and type data into the origination system',
+        'Future state: AI extracts the data in seconds, processor reviews and approves exceptions only',
+        'Estimated impact: 60-80% reduction in document handling time per loan application',
+        'Phase 2 will expand to KYC/AML identity verification and contract analysis',
+      ],
+    },
+    {
+      title: '✅ How We Ensure Accuracy',
+      body: 'The biggest concern with automation is accuracy — especially in lending and compliance contexts. Here is how we handle it:',
+      bullets: [
+        'Confidence scoring: every extracted field gets a score — "95% confident this is the gross income figure"',
+        'Low-confidence fields are automatically routed to a human for review and correction',
+        'High-confidence fields are auto-populated — humans only see exceptions',
+        'Every extraction is logged: what was extracted, confidence score, and who reviewed it',
+        'Models improve over time as reviewers correct mistakes — the system learns from exceptions',
+      ],
+    },
+    {
+      title: '🔒 Privacy & Compliance',
+      body: 'Documents contain sensitive customer information. Our controls ensure we handle it correctly:',
+      bullets: [
+        'All document processing happens over encrypted connections — data never travels in plain text',
+        'Data minimization: we extract what we need and do not store the original document longer than required',
+        'Retention policies: extracted data is kept only as long as legally required, then deleted',
+        'Access controls: only authorized staff and systems can access extracted personal data',
+        'KYC use: AI assists the analyst — a human must approve the identity verification result, AI does not decide alone',
+      ],
+    },
+    {
+      title: '💰 The Business Case',
+      body: 'Document Intelligence pays for itself quickly. Here is how to frame the ROI:',
+      bullets: [
+        'Labor savings: fewer manual hours per loan application — measurable reduction in processing cost',
+        'Speed: faster loan approvals improve customer experience and competitive positioning',
+        'Accuracy: AI is more consistent than manual entry — fewer errors and rework cycles',
+        'Scale: handle 2x the loan volume without 2x the headcount',
+        'Compliance: consistent, auditable extraction process vs. variability between human processors',
+      ],
+    },
+    {
+      title: '💡 Key Talking Points for Management',
+      bullets: [
+        '"We are automating the most manual, error-prone parts of document-heavy processes — starting with loan origination"',
+        '"AI handles the routine; our people handle the exceptions and the judgment calls"',
+        '"Accuracy is protected by confidence scoring — nothing low-confidence auto-approves without a human review"',
+        '"Phase 1 ROI is measurable within months of going live — processing time, error rate, cost per application"',
+      ],
+    },
+  ],
+
+  'platform-strategy': [
+    {
+      title: '🚀 Who We Are and Why We Exist',
+      body: 'The AI Platform team is a brand new team with a big mission: make the bank competitive in AI — safely. We are not just doing AI projects. We are building the foundation that every AI project at the bank will run on.',
+      bullets: [
+        'We build shared infrastructure that all other teams consume — like an internal AI utility',
+        'We set the standards, the tools, and the governance processes for AI across the bank',
+        'We enable other teams to move faster by giving them building blocks instead of starting from scratch',
+        'Think of us as the team that builds the roads — every business line drives on them',
+      ],
+    },
+    {
+      title: '📌 Our Four Strategic Pillars',
+      body: 'Everything we do connects back to four core goals. These are the pillars of our strategy:',
+      bullets: [
+        '⚡ Speed: reduce the time it takes to go from idea to deployed AI — weeks, not months',
+        '🛡️ Safety: build governance and risk controls into every AI deployment so the bank is always protected',
+        '📈 Scale: build once, share widely — shared infrastructure means every team benefits from every investment',
+        '📐 Standardization: consistent tools, processes, and quality bars across all AI work at the bank',
+      ],
+    },
+    {
+      title: '🗓️ Our 12-Month Roadmap',
+      body: 'We are moving fast but deliberately. Here is what we are delivering and when:',
+      bullets: [
+        'Q1-Q2: AI Portal foundation — platform built, model catalog live, first use cases onboarded. First Gen AI pilot with relationship management team.',
+        'Q3: Document Intelligence pilot with loan operations. ML platform foundation. AI Portal Phase 1 complete.',
+        'Q4: Self-service AI access live for business lines. Stakeholder performance dashboard. ML platform operational.',
+        'Year 2: AI Portal marketplace. Expanded Gen AI use cases. ML models delivering measurable business outcomes.',
+      ],
+    },
+    {
+      title: '⚠️ The Risk If We Do Not Do This',
+      body: 'One of the most important things to communicate to management is the cost of inaction. This is not optional — it is competitive.',
+      bullets: [
+        'Leading banks are already using AI to cut operational costs 20-30%',
+        'Without a platform, teams will adopt AI independently — creating compliance gaps and duplicate costs',
+        'Regulators are paying close attention to AI governance — uncoordinated adoption creates exam risk',
+        'The talent gap widens: AI-forward banks attract the best data scientists and technologists',
+        'Every month without a platform is a month competitors pull further ahead',
+      ],
+    },
+    {
+      title: '🤝 How We Work With Risk and Compliance',
+      body: 'Our team is not separate from governance — we are partners with Risk and Compliance from day one.',
+      bullets: [
+        'Model Risk Management (MRM) requirements are built into our AI Portal workflow — not bolted on after',
+        'Our team includes someone dedicated to AI governance and compliance',
+        'We work with Legal and Compliance to stay ahead of emerging AI regulations',
+        'Every high-risk AI use case gets an explicit MRM team sign-off before deployment',
+        'We produce regular reporting for Risk and compliance on AI usage across the bank',
+      ],
+    },
+    {
+      title: '📊 How We Measure Our Success',
+      body: 'Our team is accountable to business outcomes, not just technology delivery. Here is how we are measured:',
+      bullets: [
+        'Business value delivered: time saved, cost reduced, revenue enabled — tied to specific use cases',
+        'AI adoption rate: how many teams are actively using our platform',
+        'Time-to-production: how long it takes a new use case to go from approval to live',
+        'Compliance record: zero unauthorized AI deployments, zero material regulatory findings related to AI',
+        'Platform reliability: uptime and performance of the AI Portal and shared infrastructure',
+      ],
+    },
+    {
+      title: '💡 Key Talking Points for Management',
+      bullets: [
+        '"We are the bank\'s AI foundation — without us, every team builds their own, inconsistently and at greater risk"',
+        '"Our approach is governance-first: we move fast, but never at the expense of compliance"',
+        '"We are not building AI for its own sake — every initiative is tied to a business outcome"',
+        '"By end of year, the AI Platform will be the reason this bank can adopt AI faster and safer than our peers"',
+      ],
+    },
+  ],
+}

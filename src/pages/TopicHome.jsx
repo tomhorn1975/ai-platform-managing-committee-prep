@@ -29,7 +29,24 @@ export default function TopicHome({ go, topic, progress }) {
       </div>
 
       <div className="px-4 pt-5 space-y-3">
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Choose a Study Mode</h2>
+        <button
+          onClick={() => go('learn')}
+          className={`w-full text-left rounded-2xl border-2 ${c.border} ${c.bg} p-4 active:opacity-70 transition-opacity`}
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">📖</span>
+              <div>
+                <div className={`font-bold text-base ${c.text}`}>Read the Learning Guide</div>
+                <div className="text-xs text-gray-600 mt-0.5">Plain-English overview with bullet points</div>
+                <div className="text-xs text-gray-400 mt-0.5">Start here before studying</div>
+              </div>
+            </div>
+            <span className={`text-sm font-semibold ${c.text}`}>→</span>
+          </div>
+        </button>
+
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide pt-1">Test Your Knowledge</h2>
         {modes.map(m => {
           const score = p[m.id]
           const count = modeCount(topic.id, m.id)

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Home from './pages/Home'
 import TopicHome from './pages/TopicHome'
+import LearnMode from './pages/LearnMode'
 import FlashcardMode from './pages/FlashcardMode'
 import QuizMode from './pages/QuizMode'
 import FillBlankMode from './pages/FillBlankMode'
@@ -46,6 +47,7 @@ export default function App() {
 
   if (page === 'home') return <Home {...sharedProps} />
   if (page === 'topic') return <TopicHome {...sharedProps} />
+  if (page === 'learn') return <LearnMode {...sharedProps} />
   if (page === 'flashcard') return <FlashcardMode {...sharedProps} />
   if (page === 'quiz') return <QuizMode {...sharedProps} />
   if (page === 'fillblank') return <FillBlankMode {...sharedProps} />
