@@ -1,4 +1,5 @@
 export const topics = [
+  { id: 'exec-comm', title: 'Executive Communication', icon: '🎯', color: 'indigo', desc: 'How to speak confidently to management committees' },
   { id: 'ai-portal', title: 'AI Portal', icon: '🏛️', color: 'blue', desc: 'Centralized platform for AI discovery, access & governance' },
   { id: 'gen-ai', title: 'Generative AI', icon: '✨', color: 'purple', desc: 'LLMs and generative models for banking use cases' },
   { id: 'machine-learning', title: 'Machine Learning', icon: '🧠', color: 'green', desc: 'Predictive models, MLOps & ML pipelines' },
@@ -7,6 +8,7 @@ export const topics = [
 ]
 
 export const colorMap = {
+  indigo: { bg: 'bg-indigo-50', border: 'border-indigo-200', badge: 'bg-indigo-100 text-indigo-800', header: 'bg-indigo-700', light: 'bg-indigo-100', text: 'text-indigo-700', ring: 'ring-indigo-300' },
   blue: { bg: 'bg-blue-50', border: 'border-blue-200', badge: 'bg-blue-100 text-blue-800', header: 'bg-blue-600', light: 'bg-blue-100', text: 'text-blue-700', ring: 'ring-blue-300' },
   purple: { bg: 'bg-purple-50', border: 'border-purple-200', badge: 'bg-purple-100 text-purple-800', header: 'bg-purple-600', light: 'bg-purple-100', text: 'text-purple-700', ring: 'ring-purple-300' },
   green: { bg: 'bg-green-50', border: 'border-green-200', badge: 'bg-green-100 text-green-800', header: 'bg-green-600', light: 'bg-green-100', text: 'text-green-700', ring: 'ring-green-300' },
@@ -15,6 +17,23 @@ export const colorMap = {
 }
 
 export const flashcards = {
+  'exec-comm': [
+    { q: 'What does BLUF stand for and why does it matter?', a: 'Bottom Line Up Front. Executives have limited time and need your conclusion or ask stated first — before the details. If you bury the point, they will interrupt or tune out.' },
+    { q: 'What is the Situation-Complication-Resolution (SCR) framework?', a: 'A three-part message structure: Situation (where we are today), Complication (what challenge or opportunity this creates), Resolution (what we are doing about it and what we need). Use this to structure every executive update.' },
+    { q: 'What is the "So What?" test?', a: 'Before every point you make, ask "so what does this mean for the business?" If you cannot answer that, cut the point or reframe it. Executives think in business outcomes, not technical milestones.' },
+    { q: 'What does the CFO care about most in an AI presentation?', a: 'ROI and cost control: What will this cost? What will it save or earn? When do we see returns? How does it compare to alternatives? Always anchor your ask in financial terms.' },
+    { q: 'What does the CRO care about most in an AI presentation?', a: 'Risk and control: Can AI make a bad decision that harms customers or the bank? Are we compliant with SR 11-7 and fair lending rules? What are the failure modes and how do we catch them?' },
+    { q: 'What does the CEO care about most in an AI presentation?', a: 'Competitive position and strategic alignment: Are we ahead of or behind peers? Does this support the bank\'s strategy? What is the headline outcome? They want confidence, not detail.' },
+    { q: 'What does the COO care about most in an AI presentation?', a: 'Operational impact: Will this disrupt running the bank? What changes for employees? How do we manage the transition? Is this reliable enough to depend on?' },
+    { q: 'What does the Chief Compliance Officer care about most?', a: 'Regulatory exposure: Are we following SR 11-7, ECOA, FCRA, and other applicable rules? Can we explain every AI decision to a regulator? Is there an audit trail?' },
+    { q: 'How should you open a management committee presentation?', a: 'State the purpose and ask in the first 30 seconds: "Today I am here to update you on [topic] and seek approval for [ask]." Never open with background or context — open with why you are in the room.' },
+    { q: 'What do you say when an executive asks a question you cannot answer?', a: '"That is an important question. Rather than give you an estimate, let me get you the precise answer by [specific date]." Never guess or bluff. Offering a concrete follow-up date protects your credibility.' },
+    { q: 'Name three phrases executives want to hear in an AI update.', a: '"The business case is..." / "Risk is managed by..." / "We will have measurable results by [date]." These phrases signal you think in outcomes, not technology.' },
+    { q: 'Name three things to avoid when presenting to executives.', a: 'Jargon without explanation (LLM, RAG, feature engineering), vague timelines ("soon" or "in the coming months"), and burying the ask at the end after 20 minutes of context.' },
+    { q: 'How do you handle a hostile or skeptical executive in a meeting?', a: 'Do not get defensive. Say "I understand that concern — let me address it directly." Then answer calmly with facts. Acknowledge the concern as legitimate before countering it.' },
+    { q: 'What is the rule for slides in an executive presentation?', a: 'One idea per slide. Lead with the headline takeaway, not a title. Executives read the headline and decide whether to engage with the slide — make the headline do the work.' },
+    { q: 'How do you translate a technical milestone into executive language?', a: 'Replace the technical description with the business outcome. Instead of "we deployed a RAG pipeline" say "we reduced document review time by 60% for loan processing." Impact, not implementation.' },
+  ],
   'ai-portal': [
     { q: 'What is the AI Portal?', a: 'A centralized self-service platform that enables bank teams to discover, access, and deploy approved AI models and tools with built-in governance and compliance controls.' },
     { q: 'What are the three core pillars of the AI Portal?', a: 'Discovery (find AI capabilities), Access (approved self-service deployment), and Governance (compliance controls, audit trails, usage monitoring).' },
@@ -88,6 +107,14 @@ export const flashcards = {
 }
 
 export const quizzes = {
+  'exec-comm': [
+    { q: 'You have 10 minutes on the management committee agenda. What should you do in the first 60 seconds?', options: ['Give detailed background so executives have context before your ask', 'State your purpose and what you are asking for, then offer to provide context if needed', 'Introduce yourself and your team\'s mission', 'Walk through a timeline of everything the team has done'], correct: 1, explanation: 'BLUF — Bottom Line Up Front. Executives need to know why you are there and what you want before any context. If you lead with background, they will interrupt you or disengage.' },
+    { q: 'The CFO asks "how much is this going to cost us?" and you have a range but not a final number. What is the best response?', options: ['"I don\'t have that number yet, I\'ll follow up"', '"It\'s hard to say at this stage"', '"Our current estimate is $X to $Y — I will have a refined figure by [specific date] and will send it to you before then"', '"It depends on a lot of factors we haven\'t figured out yet"'], correct: 2, explanation: 'Always give what you have, with a specific commitment to follow up. Vague responses destroy credibility. A range with a firm follow-up date shows you are on top of it.' },
+    { q: 'Which of these is the correct use of the SCR (Situation-Complication-Resolution) framework?', options: ['"We built a Gen AI tool. It uses RAG. It reduces hallucinations."', '"The loan ops team processes 500 documents a day manually (Situation). This is our biggest bottleneck and costs $X per application (Complication). Document Intelligence will cut that by 60% (Resolution)."', '"Here is our roadmap for the next 12 months across all five initiatives"', '"AI is transforming banking and we need to act now"'], correct: 1, explanation: 'SCR works because it mirrors how executives think: what is the context, why does it matter now, and what are we doing. Option B is the only answer that uses the framework correctly.' },
+    { q: 'The CRO interrupts your presentation and says "I am not comfortable with AI making decisions that affect customers." Your best first move is:', options: ['Continue your presentation and address it at the end', 'Say "I understand that concern — let me address it directly" and stop to answer fully', 'Remind the CRO that you have already addressed this in the pre-read material', 'Defer to a colleague who handles risk topics'], correct: 1, explanation: 'When an executive raises a concern, stop and address it immediately. Continuing past a concern signals you are not listening. Acknowledging before countering ("I understand that concern") is the right opener.' },
+    { q: 'What does "translating tech to business language" look like in practice?', options: ['Using simpler words to explain how AI works technically', 'Replacing implementation details with business outcomes: not "we deployed a RAG pipeline" but "we cut document review time by 60%"', 'Avoiding all technical terms so executives are not confused', 'Using analogies to explain AI concepts'], correct: 1, explanation: 'Executives do not need to understand HOW it works — they need to understand WHAT it delivers. Always frame progress and capabilities as business outcomes, not technical accomplishments.' },
+    { q: 'You are presenting and realize mid-sentence you do not know the precise answer to a question the CEO just asked. You should:', options: ['Make your best guess so you do not appear unprepared', 'Say "I do not have that precise figure with me — I will have it to you by tomorrow morning"', 'Ask a colleague in the room to answer it', 'Say "that is outside the scope of today\'s discussion"'], correct: 1, explanation: 'Never bluff with an executive. Saying you will get the answer by a specific date is a sign of competence, not weakness. It shows you respect their need for accuracy over speed.' },
+  ],
   'ai-portal': [
     { q: 'Which of the following best describes the primary purpose of the AI Portal?', options: ['A cloud storage solution for AI training data', 'A centralized platform for discovering, accessing, and governing approved AI capabilities', 'A vendor marketplace for purchasing third-party AI software', 'A monitoring tool exclusively for production ML models'], correct: 1, explanation: 'The AI Portal is a centralized hub enabling teams to discover, access, and deploy approved AI capabilities with built-in governance.' },
     { q: 'In Phase 2 of the AI Portal roadmap, what key capability is introduced?', options: ['Initial platform infrastructure setup', 'Self-service access for business lines', 'Third-party vendor marketplace', 'Real-time model monitoring'], correct: 1, explanation: 'Phase 2 focuses on self-service — enabling business lines to independently access approved AI capabilities through an automated, governed workflow.' },
@@ -131,6 +158,14 @@ export const quizzes = {
 }
 
 export const fillBlanks = {
+  'exec-comm': [
+    { sentence: 'BLUF stands for Bottom Line _____ First — always lead with your conclusion or ask before providing context.', answer: 'Up Front', hint: 'Where does the conclusion go in your message?' },
+    { sentence: 'The three parts of the SCR framework are Situation, Complication, and _____.', answer: 'Resolution', hint: 'What you are doing about the problem' },
+    { sentence: 'When a CRO or board member raises a concern, acknowledge it before countering: say "I _____ that concern — let me address it directly."', answer: 'understand', hint: 'Show you heard them before you respond' },
+    { sentence: 'Instead of saying "we deployed a RAG pipeline," say "we reduced document review time by _____% for loan processing."', answer: '60', hint: 'The target reduction we cited for Document Intelligence' },
+    { sentence: 'If you do not know an exact answer in an exec meeting, commit to a specific _____ date rather than guessing or being vague.', answer: 'follow-up', hint: 'What you owe them after the meeting' },
+    { sentence: 'The "So _____?" test asks: what does this mean for the business? If you cannot answer it, cut the point or reframe it.', answer: 'What', hint: 'Why should executives care?' },
+  ],
   'ai-portal': [
     { sentence: 'The AI Portal serves as a _____ hub for teams to discover, access, and deploy approved AI capabilities.', answer: 'centralized', hint: 'Think: one place for everything' },
     { sentence: 'Phase 1 of the AI Portal roadmap focuses on _____, including the model catalog and identity management.', answer: 'foundation', hint: 'What you build first before adding features' },
@@ -169,6 +204,55 @@ export const fillBlanks = {
 }
 
 export const scenarios = {
+  'exec-comm': [
+    {
+      role: 'CEO',
+      question: '"You are 3 minutes into your presentation and I stop you. Get to the point — what exactly are you asking us for today?"',
+      keyPoints: [
+        'Do not apologize or get flustered — this is a gift, not an attack',
+        'Immediately pivot to your ask in one clear sentence: "We are asking for approval to fund X at $Y so we can deliver Z by [date]"',
+        'Offer to continue with supporting detail or take questions: "I can walk through the supporting rationale, or take questions — whichever is most useful"',
+        'This is exactly why BLUF exists — if you had led with the bottom line, this would not have happened',
+      ],
+      modelAnswer: '"Absolutely. We are asking for [specific approval/decision/funding] today. The reason is [one sentence on the business case]. The expected outcome is [specific result] by [date]. I am happy to walk through the supporting detail or answer questions — whatever is most useful for the committee." Then stop talking and let them steer.',
+    },
+    {
+      role: 'CFO',
+      question: '"Every technology team walks in here with an AI project. Why should we fund this one over everything else competing for budget right now?"',
+      keyPoints: [
+        'Do not defend against the comparison — lean into it: "That is exactly the right question"',
+        'Anchor your answer in measurable business outcome, not technology: cost saved, time saved, risk reduced, revenue enabled',
+        'Show specificity: a precise ROI estimate is more convincing than a large vague claim',
+        'Acknowledge the trade-off honestly: "If we do not do this, here is what that costs us"',
+        'Connect to the bank\'s stated strategic priorities — AI is not a distraction, it is a delivery vehicle for goals already approved',
+      ],
+      modelAnswer: '"Fair challenge. We are not asking you to fund AI — we are asking you to fund [specific outcome]. In loan operations, we have a process that costs $X per application today and takes 48 hours. We will reduce that to $Y and 8 hours within 6 months of go-live. That is a measurable return. The cost of not doing it is staying at $X while peers bring their cost to $Y. This is one of two or three investments with that level of specificity — that is why it is in front of you today."',
+    },
+    {
+      role: 'CRO',
+      question: '"I have seen AI projects fail at other banks — biased decisions, explainability problems, regulatory findings. How do I know this will not blow up on us?"',
+      keyPoints: [
+        'Validate the concern — these failures are real and well-documented',
+        'Explain the three layers of protection: governance through the AI Portal, SR 11-7 validation built into every deployment, and ongoing production monitoring',
+        'Emphasize human oversight: AI does not make autonomous high-stakes decisions — humans remain in the loop',
+        'Offer specifics: fairness testing, explainability requirements, and the rollback capability if something goes wrong',
+        'The goal is not to say "it is safe" — the goal is to show you have a credible, specific risk management framework',
+      ],
+      modelAnswer: '"Those failures are exactly why we built our governance framework before building products. Every AI use case must pass through our AI Portal — which requires SR 11-7 validation, risk rating, compliance sign-off, and documented limitations before anything reaches production. For customer-impacting decisions, human review is a required step — the AI surfaces information, a person makes the call. We have fairness testing for any model touching credit or customer decisions, and we run continuous monitoring so we catch problems before they become regulatory issues. We also have rollback — if a model degrades, we can revert in hours. I am happy to walk through the specific controls for any use case that concerns you."',
+    },
+    {
+      role: 'Board Member',
+      question: '"I read an article last week about AI going rogue and causing harm. Should our bank even be doing this?"',
+      keyPoints: [
+        'Do not dismiss the concern or make them feel uninformed — treat it as a genuine governance question',
+        'Distinguish between consumer AI (which generates the headlines) and enterprise, governed bank AI',
+        'The risk of not doing it is also real: competitive disadvantage, operational inefficiency, talent gap',
+        'Frame your role as the team that makes AI adoption safe — not the team pushing AI for its own sake',
+        'Keep the answer calm, confident, and grounded — avoid defensiveness',
+      ],
+      modelAnswer: '"The concerns you read about are real — and they are exactly why our approach starts with governance, not experimentation. The AI at this bank is not autonomous or unchecked. Every use case is reviewed, validated, monitored, and has a human in the loop for any decision that affects a customer. We are not asking the bank to trust AI blindly — we are asking the bank to use AI in specific, controlled, high-value applications where the risk is understood and managed. The alternative — not adopting AI while our competitors do — is also a risk. Our job is to make sure this bank gets the benefit without the downside. That is what the AI Platform team was built to do."',
+    },
+  ],
   'ai-portal': [
     {
       role: 'CFO',
@@ -242,6 +326,107 @@ export const scenarios = {
 }
 
 export const learningContent = {
+  'exec-comm': [
+    {
+      title: '🎯 How Management Committees Think',
+      body: 'Before you walk into the room, you need to understand how the people in it operate. Management committee members are not your peers — they are time-poor decision-makers who need to make fast, confident calls on complex topics. They are not trying to understand everything. They are trying to decide whether to approve, escalate, or reject.',
+      bullets: [
+        'They have seen dozens of presentations that week — yours must be instantly clear',
+        'They think in outcomes, not activities: "what did this deliver?" not "what did you build?"',
+        'They tolerate uncertainty only if you have a plan to resolve it',
+        'They are highly attuned to confidence — hesitation signals you do not own your material',
+        'They will interrupt if they are confused or if you are not getting to the point',
+        'A well-run 10-minute slot outperforms a rambling 30-minute one every time',
+      ],
+    },
+    {
+      title: '🏦 What Each Executive Cares About',
+      body: 'Every person in that room has a different lens. Tailor your message to their priorities. When a specific executive asks a question, answer it in their language.',
+      bullets: [
+        'CEO: Is this the right strategy? Are we ahead of or behind peers? What is the headline outcome? How confident should I be?',
+        'CFO: What does it cost? What does it save or earn? When do we break even? Is there a cheaper alternative?',
+        'CRO (Chief Risk Officer): What could go wrong? Are we compliant? Who is accountable? What are the failure modes?',
+        'COO: Does this disrupt operations? What changes for staff? Is it reliable? What is the implementation plan?',
+        'Chief Compliance Officer: Are we following SR 11-7, ECOA, FCRA? Can we explain decisions to regulators? Is there an audit trail?',
+        'CTO: Is the architecture sound? Can we maintain and scale it? Does it fit our technology strategy?',
+        'Board Members: Is the bank protected? Is this a reputational risk? Are we governing this responsibly?',
+      ],
+    },
+    {
+      title: '📐 The BLUF Rule: Bottom Line Up Front',
+      body: 'This is the single most important principle of executive communication. State your conclusion or ask in the very first sentence — before context, before background, before detail. Executives do not want to wait to understand why you are in the room.',
+      bullets: [
+        'Wrong: "Over the past quarter our team has been working on several initiatives... [5 minutes of context] ...so we are asking for approval."',
+        'Right: "We are asking for approval to fund Document Intelligence at $X. Here is the business case."',
+        'Think of a newspaper: the headline tells you the story. Executives scan your presentation like headlines.',
+        'If an executive can interrupt you after 2 minutes and still know what you want — you are doing it right',
+        'After stating your bottom line, offer to go deeper: "I can walk through the detail or take questions — whatever is most useful"',
+      ],
+    },
+    {
+      title: '🔺 The SCR Framework: Structure Every Message',
+      body: 'Use Situation-Complication-Resolution to structure every update, whether it is a full presentation, a 2-minute verbal update, or an email. It mirrors the way decision-makers naturally think.',
+      bullets: [
+        'SITUATION: What is the current state? Establish shared context — what is true today that everyone agrees on',
+        'Example Situation: "Our loan operations team processes 500 documents per day. Each application requires 2 hours of manual data entry."',
+        'COMPLICATION: What challenge or opportunity does this create? Why does this matter right now?',
+        'Example Complication: "This is our biggest throughput bottleneck, costing $X per application and slowing approvals by 48 hours versus competitors."',
+        'RESOLUTION: What are we doing about it, and what do we need from this committee?',
+        'Example Resolution: "Document Intelligence will automate 80% of this work. We are asking for $Y to launch a pilot in Q3."',
+        'Every point you make should connect back to one of these three parts',
+      ],
+    },
+    {
+      title: '🔤 Translate Tech Into Business Language',
+      body: 'You will lose your audience immediately if you use technical terminology without translation. Executives do not need to understand how AI works — they need to understand what it delivers. Make this trade every time.',
+      bullets: [
+        'Instead of "we deployed a RAG pipeline" → say "we built a system that grounds AI answers in verified bank documents, reducing errors"',
+        'Instead of "our LLM uses transformer architecture" → say "we use an AI that reads and summarizes documents the way a senior analyst would"',
+        'Instead of "we reduced model hallucination rate by 40%" → say "our AI is now accurate on 96% of document extractions, up from 57%"',
+        'Instead of "we completed feature engineering for the fraud model" → say "we improved the inputs to our fraud detection model to catch more fraud patterns"',
+        'Instead of "SR 11-7 validation gates are embedded in the pipeline" → say "every AI model must pass our risk team\'s approval before it goes live"',
+        'Rule: if a non-technical senior banker would not immediately understand it, rewrite it',
+      ],
+    },
+    {
+      title: '❓ Handling Tough Questions With Confidence',
+      body: 'Executives will test you. Some questions are genuine curiosity. Some are probing for gaps. Some are political. How you handle the question matters as much as the answer.',
+      bullets: [
+        'If you know the answer: give it directly, then stop. Do not over-explain.',
+        'If you do not know: "That is an important question. I want to give you an accurate answer — I will have it to you by [specific date]." Never guess.',
+        'If the question is hostile: "I understand that concern — let me address it directly." Validate before countering. Never get defensive.',
+        'If the question takes you off-topic: answer briefly, then offer to go deeper offline: "I can cover that in more detail after the meeting if useful."',
+        'If two executives disagree in the room: do not take sides. "Those are both important perspectives — here is how we have thought about that trade-off."',
+        'Always maintain eye contact, speak slowly, and pause before answering. Rushing signals panic.',
+      ],
+    },
+    {
+      title: '⚙️ Meeting Mechanics: The Practical Stuff',
+      body: 'The content of what you say matters. But so does how you run your time in the room. These habits separate people who get approved from people who get asked to come back with more work.',
+      bullets: [
+        'Know your time limit and plan for 70% of it — you will always get questions',
+        'Prepare a one-page executive summary: situation, key decisions, ask, timeline. Send it in advance.',
+        'Have backup slides for every likely question — do not include them in the main deck',
+        'Never read from your slides — executives can read faster than you can talk',
+        'Watch for body language: executives looking at phones or leaning back means you need to speed up or ask "is there a specific area I should focus on?"',
+        'End with a clear ask or decision: "We are seeking approval for X" or "We need a decision on Y by Z date"',
+        'Follow up in writing within 24 hours: confirm decisions made, action items, and your commitments',
+      ],
+    },
+    {
+      title: '🚫 What Executives Hate',
+      body: 'Knowing what not to do is as important as knowing what to do. These are the most common mistakes that undermine credibility in management committee settings.',
+      bullets: [
+        'Too much detail too early — context before the punchline loses the room in the first 2 minutes',
+        'Jargon without translation — if they have to ask what it means, you have already lost ground',
+        'Vague timelines — "soon," "in the coming months," "by end of year" are not commitments',
+        'Surprises — never bring bad news to a management committee without having told key stakeholders first',
+        '"We are exploring..." without a plan — exploration is fine, but you need a point of view on where it is going',
+        'Defensive responses to tough questions — it signals you are not confident in your own material',
+        'Asking for too many things at once — focus your ask so there is one clear decision to make',
+      ],
+    },
+  ],
   'ai-portal': [
     {
       title: '🏛️ What Is the AI Portal?',
